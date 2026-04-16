@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes - Colombia Positiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a192f;
+            color: #ccd6f6;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #233554;
+        }
+        
+        h1 {
+            color: #64ffda;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #8892b0;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .status {
+            background: #112240;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #64ffda;
+        }
+        
+        .folder-section {
+            margin: 40px 0;
+            background: rgba(17, 34, 64, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .folder-title {
+            color: #e6f1ff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #233554;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .folder-title span {
+            color: #64ffda;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .image-card {
+            background: #0a192f;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
+        }
+        
+        .image-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #112240;
+            position: relative;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .image-name {
+            color: #e6f1ff;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .image-path {
+            color: #8892b0;
+            font-family: monospace;
+            font-size: 0.75rem;
+            word-break: break-all;
+        }
+        
+        .no-image {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: #8892b0;
+            background: #112240;
+        }
+        
+        .no-image .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #233554;
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        
+        a {
+            color: #64ffda;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid #64ffda;
+            border-radius: 5px;
+            color: #64ffda;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(100, 255, 218, 0.2);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Galería de Imágenes</h1>
+            <p class="subtitle">Verificación de recursos visuales para Colombia Positiva</p>
+            
+            <div class="status">
+                <p>✅ Todas las imágenes han sido agregadas correctamente a sus respectivas carpetas.</p>
+                <p>ℹ️ Esta página muestra cómo se ven las imágenes en el sitio web.</p>
+            </div>
+            
+            <a href="/" class="back-link">← Volver al sitio principal</a>
+        </header>
+        
+        <!-- Services Images -->
+        <section class="folder-section">
+            <h2 class="folder-title"><span>📁</span> Carpeta: /assets/images/services/</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/services/construccion.png" alt="Materiales de Construcción Civil">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">construccion.png</div>
+                        <div class="image-path">/assets/images/services/construccion.png</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/services/dotaciones.png" alt="Dotaciones Industriales">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">dotaciones.png</div>
+                        <div class="image-path">/assets/images/services/dotaciones.png</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/services/maquinaria.png" alt="Maquinaria y Transporte">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">maquinaria.png</div>
+                        <div class="image-path">/assets/images/services/maquinaria.png</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/services/seguridad-higiene.png" alt="Seguridad e Higiene">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">seguridad-higiene.png</div>
+                        <div class="image-path">/assets/images/services/seguridad-higiene.png</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pillars Images -->
+        <section class="folder-section">
+            <h2 class="folder-title"><span>📁</span> Carpeta: /assets/images/pillars/</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/pillars/pilar-catalogo.jpg" alt="Catálogo Virtual">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">pilar-catalogo.jpg</div>
+                        <div class="image-path">/assets/images/pillars/pilar-catalogo.jpg</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/pillars/pilar-obra-civil.jpg" alt="Proyectos de Obra Civil">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">pilar-obra-civil.jpg</div>
+                        <div class="image-path">/assets/images/pillars/pilar-obra-civil.jpg</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/pillars/pilar-personal.jpg" alt="Contratación de Personal">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">pilar-personal.jpg</div>
+                        <div class="image-path">/assets/images/pillars/pilar-personal.jpg</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Hero Images -->
+        <section class="folder-section">
+            <h2 class="folder-title"><span>📁</span> Carpeta: /assets/images/hero/</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/hero/hero-background.jpg" alt="Imagen de fondo principal">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">hero-background.jpg</div>
+                        <div class="image-path">/assets/images/hero/hero-background.jpg</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Logo Images -->
+        <section class="folder-section">
+            <h2 class="folder-title"><span>📁</span> Carpeta: /assets/images/logo/</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/logo/logo.png" alt="Logo principal de la empresa">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">logo.png</div>
+                        <div class="image-path">/assets/images/logo/logo.png</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-container">
+                        <img src="/assets/images/logo/favicon.ico" alt="Ícono para pestaña del navegador">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-name">favicon.ico</div>
+                        <div class="image-path">/assets/images/logo/favicon.ico</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Tu sitio web está actualmente disponible en: <a href="/">http://localhost:3000</a></p>
+            <p>Esta galería de imágenes está disponible en: <a href="/image-gallery.html">http://localhost:3000/image-gallery.html</a></p>
+            <p style="margin-top: 15px;">💡 Nota: Las imágenes se muestran aquí para verificación, pero aún no están integradas en los componentes principales del sitio.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts ────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ─── CSS Custom Properties ───────────────────────────────────────────────── */
+:root {
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-dm-serif: 'DM Serif Display', serif;
+  --font-outfit: 'Outfit', sans-serif;
+
+  --color-coal:   #0A0A0A;
+  --color-navy:   #060D1F;
+  --color-gold:   #C9A84C;
+  --color-emerald:#1A6B3C;
+  --color-cream:  #F5F0E8;
+
+  --section-pad: clamp(4rem, 8vw, 8rem);
+}
+
+/* ─── Base Reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  font-family: var(--font-outfit);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Selection ───────────────────────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-navy); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .font-display  { font-family: var(--font-bebas); }
+  .font-heading  { font-family: var(--font-dm-serif); }
+  .font-body     { font-family: var(--font-outfit); }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A84C 0%, #E4C97A 50%, #9E7A2A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-emerald {
+    background: linear-gradient(135deg, #1A6B3C 0%, #22A05A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gold-glow {
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.08);
+  }
+
+  .bg-noise {
+    background-image: url('/assets/backgrounds/noise-texture.png');
+    background-repeat: repeat;
+  }
+
+  .section-padding {
+    padding-top: var(--section-pad);
+    padding-bottom: var(--section-pad);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .gold-line::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--color-gold);
+    margin-top: 1rem;
+  }
+
+  .gold-line-center::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--color-gold);
+    margin: 1rem auto 0;
+  }
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* ─── Canvas (Three.js) ───────────────────────────────────────────────────── */
+canvas {
+  touch-action: none;
+}
+
+/* ─── WhatsApp Float Button ───────────────────────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  animation: pulse-gold 2s ease-in-out infinite;
+}

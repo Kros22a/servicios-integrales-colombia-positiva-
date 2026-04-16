@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsualización de Imágenes - Colombia Positiva</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #64ffda;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .instructions {
+            background-color: #112240;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #64ffda;
+        }
+        .folder-section {
+            margin-bottom: 40px;
+        }
+        .folder-title {
+            color: #e6f1ff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #233554;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .image-placeholder {
+            background-color: #112240;
+            border: 2px dashed #233554;
+            border-radius: 8px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: #8892b0;
+        }
+        .image-placeholder p {
+            margin: 0;
+        }
+        .path {
+            font-family: monospace;
+            background-color: #0a192f;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #64ffda;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #233554;
+            color: #8892b0;
+        }
+        a {
+            color: #64ffda;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Previsualización de Imágenes</h1>
+        
+        <div class="instructions">
+            <h2>Instrucciones para Agregar Imágenes:</h2>
+            <ol>
+                <li>Coloque sus imágenes en las carpetas correspondientes dentro de <span class="path">public/assets/images/</span></li>
+                <li>Las rutas de las imágenes en su código deben ser relativas al directorio <span class="path">public</span>, por ejemplo: <span class="path">/assets/images/services/construccion.png</span></li>
+                <li>Para previsualizar una imagen, simplemente colóquela en la carpeta correcta y actualice esta página</li>
+                <li>Cuando esté satisfecho con las imágenes, puede hacer commit y push a GitHub</li>
+            </ol>
+        </div>
+
+        <div class="folder-section">
+            <h3 class="folder-title">Carpeta: /assets/images/services/</h3>
+            <div class="image-grid">
+                <div class="image-placeholder">
+                    <p>construccion.png<br>(Materiales de Construcción Civil)</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>maquinaria.png<br>(Maquinaria y Transporte)</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>dotaciones.png<br>(Dotaciones Industriales)</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>seguridad-higiene.png<br>(Seguridad e Higiene)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="folder-section">
+            <h3 class="folder-title">Carpeta: /assets/images/pillars/</h3>
+            <div class="image-grid">
+                <div class="image-placeholder">
+                    <p>pilar-personal.jpg<br>(Contratación de Personal)</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>pilar-obra-civil.jpg<br>(Proyectos de Obra Civil)</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>pilar-catalogo.jpg<br>(Catálogo Virtual)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="folder-section">
+            <h3 class="folder-title">Carpeta: /assets/images/hero/</h3>
+            <div class="image-grid">
+                <div class="image-placeholder">
+                    <p>hero-background.jpg<br>(Imagen de fondo principal)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="folder-section">
+            <h3 class="folder-title">Carpeta: /assets/images/logo/</h3>
+            <div class="image-grid">
+                <div class="image-placeholder">
+                    <p>logo.png<br>(Logo principal de la empresa)</p>
+                </div>
+                <div class="image-placeholder">
+                    <p>favicon.ico<br>(Ícono para pestaña del navegador)</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Su sitio web está actualmente disponible en: <a href="/">http://localhost:3000</a></p>
+            <p>Esta página de previsualización está disponible en: <a href="/image-preview.html">http://localhost:3000/image-preview.html</a></p>
+        </footer>
+    </div>
+</body>
+</html>
