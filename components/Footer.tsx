@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { COMPANY, CERTIFICATIONS } from '@/lib/constants'
 
 const FOOTER_SERVICES = [
@@ -43,8 +44,13 @@ export default function Footer() {
           <div className="lg:col-span-1">
             {/* Logo mark */}
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-lg bg-gold-shimmer flex items-center justify-center font-display text-navy text-xl font-bold">
-                CP
+              <div className="relative w-10 h-10 flex-shrink-0">
+                <Image
+                  src="/assets/images/logo/logo.png"
+                  alt="Colombia Positiva"
+                  fill
+                  className="object-contain rounded-lg"
+                />
               </div>
               <div>
                 <p className="font-display text-gold text-lg tracking-widest leading-none">COLOMBIA</p>

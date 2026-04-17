@@ -70,17 +70,12 @@ export default function Navbar() {
               className="flex items-center gap-3 group"
             >
               <div className="relative w-10 h-10 flex-shrink-0">
-                {/* Fallback si no hay imagen de logo */}
-                <div className="w-10 h-10 rounded-lg bg-gold-shimmer flex items-center justify-center font-display text-navy text-xl font-bold">
-                  CP
-                </div>
-                {/* Descomentar cuando tengas el logo:
                 <Image
-                  src="/assets/images/logo/logo-icon.png"
+                  src="/assets/images/logo/logo.png"
                   alt="Colombia Positiva"
                   fill
-                  className="object-contain"
-                /> */}
+                  className="object-contain rounded-lg"
+                />
               </div>
               <div className="leading-tight">
                 <p className="font-display text-gold text-lg tracking-widest leading-none">
