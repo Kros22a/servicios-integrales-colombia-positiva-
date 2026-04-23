@@ -11,6 +11,8 @@ const NAV_LINKS = [
   { href: '#servicios', label: 'Servicios' },
   { href: '#pilares',   label: 'Pilares' },
   { href: '#catalogo',  label: 'Catálogo' },
+  { href: '/galeria#galeria', label: 'Galería' },
+  { href: '/galeria#colaboradores', label: 'Colaboradores' },
 ]
 
 export default function Navbar() {
@@ -27,7 +29,10 @@ export default function Navbar() {
 
   // Track active section via IntersectionObserver
   useEffect(() => {
-    const ids = NAV_LINKS.map(l => l.href.replace('#', ''))
+    // Filter out external links (starting with /)
+    const ids = NAV_LINKS
+      .filter(l => !l.href.startsWith('/'))
+      .map(l => l.href.replace('#', ''))
     const observers: IntersectionObserver[] = []
 
     ids.forEach(id => {
@@ -45,6 +50,14 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false)
+    
+    // Check if it's an external link (starts with /)
+    if (href.startsWith('/')) {
+      window.location.href = href
+      return
+    }
+    
+    // Handle anchor links
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -95,13 +108,13 @@ export default function Navbar() {
                   href={link.href}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
                   className={`relative px-4 py-2 text-sm font-body font-medium tracking-wide transition-colors duration-200 rounded-md ${
-                    activeSection === link.href.replace('#', '')
+                    activeSection === link.href.replace('#', '') && !link.href.startsWith('/')
                       ? 'text-gold'
                       : 'text-cream/60 hover:text-cream'
                   }`}
                 >
                   {link.label}
-                  {activeSection === link.href.replace('#', '') && (
+                  {activeSection === link.href.replace('#', '') && !link.href.startsWith('/') && (
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute inset-x-2 bottom-0 h-0.5 bg-gold rounded-full"
@@ -179,7 +192,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
                   className={`text-xl font-display tracking-widest py-3 border-b border-white/5 transition-colors ${
-                    activeSection === link.href.replace('#', '')
+                    activeSection === link.href.replace('#', '') && !link.href.startsWith('/')
                       ? 'text-gold'
                       : 'text-cream/70 hover:text-cream'
                   }`}
