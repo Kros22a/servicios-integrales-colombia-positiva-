@@ -28,7 +28,7 @@ export default function GaleriaPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Video 1 */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -38,7 +38,7 @@ export default function GaleriaPage() {
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
                 <video
-                  className="w-full h-[64rem] object-cover"
+                  className="w-full h-[28rem] object-cover"
                   controls
                 >
                   <source src="/assets/images/gallery/video-1.mp4" type="video/mp4" />
@@ -55,7 +55,7 @@ export default function GaleriaPage() {
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
                 <video
-                  className="w-full h-[64rem] object-cover"
+                  className="w-full h-[28rem] object-cover"
                   controls
                 >
                   <source src="/assets/images/gallery/video-2.mp4" type="video/mp4" />
@@ -69,9 +69,9 @@ export default function GaleriaPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg bg-navy-mid flex items-center justify-center h-[64rem]"
+                className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg bg-navy-mid flex items-center justify-center h-[28rem]"
               >
-                <div className="relative w-[32rem] h-[32rem]">
+                <div className="relative w-32 h-32">
                   <Image
                     src="/assets/images/logo/logos2.png"
                     alt="Colombia Positiva Logo"
@@ -89,7 +89,7 @@ export default function GaleriaPage() {
                 viewport={{ once: true }}
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
-                <div className="relative w-full h-[64rem]">
+                <div className="relative w-full h-[28rem]">
                   <Image
                     src="/assets/images/gallery/team-photo.jpg"
                     alt="Nuestro Equipo"
@@ -107,7 +107,7 @@ export default function GaleriaPage() {
                 viewport={{ once: true }}
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
-                <div className="relative w-full h-[64rem]">
+                <div className="relative w-full h-[28rem]">
                   <Image
                     src="/assets/images/gallery/process-1.jpg"
                     alt="Proceso 1"
@@ -125,7 +125,7 @@ export default function GaleriaPage() {
                 viewport={{ once: true }}
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
-                <div className="relative w-full h-[64rem]">
+                <div className="relative w-full h-[28rem]">
                   <Image
                     src="/assets/images/gallery/process-2.jpg"
                     alt="Proceso 2"
@@ -143,7 +143,7 @@ export default function GaleriaPage() {
                 viewport={{ once: true }}
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg md:col-span-2 lg:col-span-1"
               >
-                <div className="relative w-full h-[64rem]">
+                <div className="relative w-full h-[28rem]">
                   <Image
                     src="/assets/images/gallery/process-3.jpg"
                     alt="Proceso 3"
@@ -160,7 +160,7 @@ export default function GaleriaPage() {
                 viewport={{ once: true }}
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
-                <div className="relative w-full h-[64rem]">
+                <div className="relative w-full h-[28rem]">
                   <Image
                     src="/assets/images/gallery/process-4.jpg"
                     alt="Proceso 4"
@@ -177,7 +177,7 @@ export default function GaleriaPage() {
                 viewport={{ once: true }}
                 className="relative overflow-hidden rounded-lg border border-gold/20 shadow-lg"
               >
-                <div className="relative w-full h-[64rem]">
+                <div className="relative w-full h-[28rem]">
                   <Image
                     src="/assets/images/gallery/process-5.jpg"
                     alt="Proceso 5"

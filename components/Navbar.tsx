@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { COMPANY } from '@/lib/constants'
+import { usePathname } from 'next/navigation'
 
 const NAV_LINKS = [
   { href: '#inicio',    label: 'Inicio' },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const [scrolled,     setScrolled]     = useState(false)
   const [mobileOpen,   setMobileOpen]   = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
+  const pathname = usePathname()
 
   // Detect scroll to add background blur
   useEffect(() => {
@@ -50,6 +52,13 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false)
+    
+    // Check if we're on the gallery page and trying to navigate to an internal section
+    if (pathname === '/galeria' && href.startsWith('#')) {
+      // Redirect to homepage with the hash
+      window.location.href = '/' + href
+      return
+    }
     
     // Check if it's an external link (starts with /)
     if (href.startsWith('/')) {
@@ -108,13 +117,13 @@ export default function Navbar() {
                   href={link.href}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
                   className={`relative px-4 py-2 text-sm font-body font-medium tracking-wide transition-colors duration-200 rounded-md ${
-                    activeSection === link.href.replace('#', '') && !link.href.startsWith('/')
+                    activeSection === link.href.replace('#', '') && !link.href.startsWith('/') && pathname !== '/galeria'
                       ? 'text-gold'
                       : 'text-cream/60 hover:text-cream'
                   }`}
                 >
                   {link.label}
-                  {activeSection === link.href.replace('#', '') && !link.href.startsWith('/') && (
+                  {activeSection === link.href.replace('#', '') && !link.href.startsWith('/') && pathname !== '/galeria' && (
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute inset-x-2 bottom-0 h-0.5 bg-gold rounded-full"
@@ -192,7 +201,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
                   className={`text-xl font-display tracking-widest py-3 border-b border-white/5 transition-colors ${
-                    activeSection === link.href.replace('#', '') && !link.href.startsWith('/')
+                    activeSection === link.href.replace('#', '') && !link.href.startsWith('/') && pathname !== '/galeria'
                       ? 'text-gold'
                       : 'text-cream/70 hover:text-cream'
                   }`}
